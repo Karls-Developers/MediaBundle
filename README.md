@@ -3,7 +3,7 @@
 
 Provides a new Field Type for handling S3 Stored files select from Storage and save it right.
 
-##Installation
+## Installation
 
 via composer
 ```
@@ -35,10 +35,10 @@ $routes->addCollection($loader->import("@KarlsMediaBundle/Resources/config/routi
 ```
 
 
-##Usage
+## Usage
 
 
-####Media
+#### Media
 unite cms does not manage any files directly but provides a file field that stores a reference using any s3 compatible API (Amazon, minio.io etc.). The file field renders an upload input element that allows the content editors to upload files directly to the s3 compatible server, using a presgined upload url. The file filed also reacts on content delete and update events and tries to delete files, that are not used anymore. In order to use the file field, set the required bucket and optional file_type settings:
 
 ```
@@ -55,7 +55,7 @@ unite cms does not manage any files directly but provides a file field that stor
 }
 ```
 
-####MediaImage
+#### MediaImage
 The image type is an extension of the file input type that renders a thumbnail preview next to the upload input type and limits file_type to "png,gif,jpeg,jpg":
 
 ```
