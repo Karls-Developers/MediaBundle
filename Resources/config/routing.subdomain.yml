@@ -1,0 +1,23 @@
+karls_media_sign:
+    resource: "@KarlsMediaBundle/Controller/SignController.php"
+    type:     annotation
+    prefix:   /{domain}/api/media/sign
+    host:     '{organization}.{hostname}'
+    requirements:
+        domain: '%identifier_url_pattern%'
+        organization: '%identifier_url_pattern%'
+        hostname: '%allowed_hostname%'
+    defaults:
+        hostname: '%default_hostname%'
+
+karls_media_select:
+    resource: "@KarlsMediaBundle/Controller/SelectController.php"
+    type:     annotation
+    prefix:   /{domain}/api/media/select
+    host:     '{organization}.{hostname}'
+    requirements:
+        domain: '%identifier_url_pattern%'
+        organization: '%identifier_url_pattern%'
+        hostname: '%allowed_hostname%'
+    defaults:
+        hostname: '%default_hostname%'

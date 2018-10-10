@@ -1,0 +1,21 @@
+services:
+
+  # A Helper for common s3 storage tasks.
+  karls.media.service:
+    public: true
+    class: Karls\MediaBundle\Service\StorageService
+    arguments: ['@unite.cms.field_type_manager']
+
+  # A media upload field.
+  Karls\MediaBundle\Field\Types\MediaFieldType:
+    tags: [unite_cms.field_type]
+    arguments: ['@router.default', '%kernel.secret%', '@karls.media.service', '@security.csrf.token_manager']
+
+  Karls\MediaBundle\Field\Types\MediaImageFieldType:
+    tags: [unite_cms.field_type]
+    arguments: ['@router.default', '%kernel.secret%', '@karls.media.service', '@security.csrf.token_manager']
+
+  # Provide PreSignFormType form as a service for S3 presigning from type
+  Karls\MediaBundle\Form\PreSignFormType:
+    tags: [form.type]
+    arguments: ['@security.token_storage']

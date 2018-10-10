@@ -1,0 +1,15 @@
+karls_media_sign:
+    resource: "@KarlsMediaBundle/Controller/SignController.php"
+    type:     annotation
+    prefix:   /{organization}/{domain}/api/media/sign
+    requirements:
+        organization: '%identifier_url_pattern%'
+        domain: '%identifier_url_pattern%'
+
+karls_media_select:
+    resource: "@KarlsMediaBundle/Controller/SelectController.php"
+    type:     annotation
+    prefix:   /{organization}/{domain}/api/media/select
+    requirements:
+        organization: '%identifier_url_pattern%'
+        domain: '%identifier_url_pattern%'
