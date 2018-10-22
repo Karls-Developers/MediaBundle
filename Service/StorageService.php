@@ -204,7 +204,7 @@ class StorageService
         $s3Client = new S3Client(
             [
                 'version' => 'latest',
-                'region' => 'us-east-1',
+                'region' => $bucket_settings['region'] ?? 'us-east-1',
                 'endpoint' => $bucket_settings['endpoint'],
                 'use_path_style_endpoint' => true,
                 'credentials' => [
@@ -266,7 +266,7 @@ class StorageService
             $s3Client = new S3Client(
                 [
                     'version' => 'latest',
-                    'region' => $bucket_settings['region'] ?: 'us-east-1',
+                    'region' => $bucket_settings['region'] ?? 'us-east-1',
                     'endpoint' => $bucket_settings['endpoint'],
                     'use_path_style_endpoint' => true,
                     'credentials' => [
