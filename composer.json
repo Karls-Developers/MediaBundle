@@ -1,6 +1,6 @@
 {
     "name": "karls/media-bundle",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "type": "symfony-bundle",
     "description": "Bundle for Unite-Cms. Provides a new Field Type for handling S3 Stored files select from Storage and save it right.",
     "require": {
