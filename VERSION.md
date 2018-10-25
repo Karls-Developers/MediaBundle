@@ -1,3 +1,7 @@
+# Version: 1.0.6
+
+Added HTTP request `OPTIONS` [#6aa5222](https://github.com/Karls-Developers/MediaBundle/commit/6aa522218e57325a1c8ec306ff6c1c9099af7444)
+
 # Version: 1.0.3
 
 Added AWS Region
