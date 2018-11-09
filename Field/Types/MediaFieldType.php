@@ -17,6 +17,7 @@ use UniteCMS\CoreBundle\ParamConverter\IdentifierNormalizer;
 use UniteCMS\CoreBundle\SchemaType\SchemaTypeManager;
 use Karls\MediaBundle\Model\PreSignedUrl;
 use UniteCMS\StorageBundle\Field\Types\FileFieldType;
+use UniteCMS\StorageBundle\Field\Types\FieldableContentType;
 use Karls\MediaBundle\Form\StorageFileType;
 use Karls\MediaBundle\Service\StorageService;
 
@@ -125,7 +126,7 @@ class MediaFieldType extends FieldType
     /**
      * {@inheritdoc}
      */
-    function resolveGraphQLData(FieldableField $field, $value)
+    function resolveGraphQLData(FieldableField $field, $value, FieldableContent $content)
     {
         // Create full URL to file.
         $value['url'] = $this->generateEndpoint($field->getSettings()) . '/' . $value['name'];
