@@ -1,3 +1,6 @@
+# Version: 1.0.8
+Update UniteCMS Version
+
 # Version: 1.0.7
 Added FieldableContent in resolveGraphQLData
 
