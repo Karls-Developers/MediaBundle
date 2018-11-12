@@ -1,6 +1,6 @@
 {
   "name": "KarlsMediaBundle",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "dependencies": {
     "uikit": "^3.0.0-rc.9"
   },
