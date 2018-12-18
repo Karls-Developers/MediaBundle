@@ -1,3 +1,6 @@
+# Version: 1.0.9
+Don't delete the files in S3 Bucket which selected as deleted
+
 # Version: 1.0.8
 Update UniteCMS Version
 
