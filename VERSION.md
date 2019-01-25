@@ -1,3 +1,7 @@
+# Version: 1.1.0
+
+Updated to new unite cms Version
+
 # Version: 1.0.9
 Don't delete the files in S3 Bucket which selected as deleted
 
