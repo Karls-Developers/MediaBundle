@@ -1,3 +1,6 @@
+# Version: 1.2.0
+Fixes problem where the id was not set for S3
+
 # Version: 1.1.1
 Updated to new unite cms Version
 
