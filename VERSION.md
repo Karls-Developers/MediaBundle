@@ -1,4 +1,4 @@
-# Version: 1.2.1
+# Version: 1.2.2
 Fixes problem where the id was not set for S3
 
 # Version: 1.1.1
