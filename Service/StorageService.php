@@ -121,7 +121,7 @@ class StorageService
         );
 
         // Set the upload file path to an optional path + filename.
-        $filePath = $filename;
+        $filePath = $uuid.'/'.$filename;
 
         if (!empty($bucket_settings['path'])) {
             $path = trim($bucket_settings['path'], "/ \t\n\r\0\x0B");

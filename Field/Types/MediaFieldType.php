@@ -128,8 +128,12 @@ class MediaFieldType extends FieldType
      */
     function resolveGraphQLData(FieldableField $field, $value, FieldableContent $content)
     {
+        if (!isset($value['id']) && !isset($value['name'])) {
+            return;
+        }
+
         // Create full URL to file.
-        $value['url'] = $this->generateEndpoint($field->getSettings()) . '/' . $value['name'];
+        $value['url'] = $this->generateEndpoint($field->getSettings()) . '/' . $value['id'] . '/' . $value['name'];
         return $value;
     }
 
