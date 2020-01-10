@@ -126,7 +126,7 @@ class MediaFieldType extends FieldType
     /**
      * {@inheritdoc}
      */
-    function resolveGraphQLData(FieldableField $field, $value, FieldableContent $content)
+    function resolveGraphQLData(FieldableField $field, $value, FieldableContent $content, array $args, $context, ResolveInfo $info)
     {
         if (!isset($value['id']) && !isset($value['name'])) {
             return;
