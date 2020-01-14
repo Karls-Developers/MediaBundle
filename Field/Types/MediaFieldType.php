@@ -20,6 +20,7 @@ use UniteCMS\StorageBundle\Field\Types\FileFieldType;
 use UniteCMS\StorageBundle\Field\Types\FieldableContentType;
 use Karls\MediaBundle\Form\StorageFileType;
 use Karls\MediaBundle\Service\StorageService;
+use GraphQL\Type\Definition\ResolveInfo;
 
 class MediaFieldType extends FieldType
 {
