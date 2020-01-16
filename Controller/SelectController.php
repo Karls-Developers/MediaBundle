@@ -30,7 +30,7 @@ class SelectController extends Controller
         try {
             $objects = $this->container->get(
                 'karls.media.service'
-            )->listObjects($contentType, $request->query->get('field'));
+            )->listObjects($contentType, $request->query->get('field'), $this->container->getParameter('kernel.secret'));
 
             return new JsonResponse($objects);
         } catch (\InvalidArgumentException $e) {

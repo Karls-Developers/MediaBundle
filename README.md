@@ -1,6 +1,8 @@
 
 # Karls Media Bundle for Unite-Cms
 
+#### !! The config `thumbnail_url` is in the next version not available anymore. Please delete it in all your configs. !!
+
 Provides a new Field Type for handling S3 Stored files select from Storage and save it right.
 
 ## Installation
@@ -63,6 +65,7 @@ The image type is an extension of the file input type that renders a thumbnail p
   "type": "mediaimage",
   "settings": {
     "bucket": { ... },
+    //  read warning on top of wiki, has no function anymore but will be removed in the next version
     "thumbnail_url": "your_thumbnailing_service.com/{endpoint}/{id}/{name}"
   }
 }

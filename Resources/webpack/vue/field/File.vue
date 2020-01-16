@@ -76,14 +76,14 @@
                  class="uk-card uk-card-default uk-card-small">
               <div class="uk-card-media-top">
                 <div class="thumbnail uk-margin-small-right">
-                  <img v-if="fileFromStorage.FileKey"
-                       :src="endpoint+fileFromStorage.FileKey"
-                       :alt="fileFromStorage.FileKey" />
+                  <img v-if="fileFromStorage.url.thumbnail"
+                       :src="fileFromStorage.url.thumbnail"
+                       :alt="fileFromStorage.filename" />
                 </div>
               </div>
               <div class="flex-end">
                 <div class="uk-card-body">
-                  <span class="uk-thumbnail-caption">{{fileNameOfFileKey(fileFromStorage.FileKey)}}</span>
+                  <span class="uk-thumbnail-caption">{{fileFromStorage.filename}}</span>
                 </div>
                 <div class="uk-card-footer">
                   <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom"
@@ -299,10 +299,6 @@ export default {
     'endpoint'
   ],
   methods: {
-    fileNameOfFileKey(fileKey) {
-      const split = fileKey.split('/');
-      return split[split.length - 1];
-    },
     hasThumbnailUrl: function () {
       return this.thumbnailUrl && this.thumbnailUrl.length > 0;
     },
@@ -340,25 +336,12 @@ export default {
 
     },
     selectFile: function (image) {
-      let data = new FormData();
-      data.append('pre_sign_form[filename]', image.FileKey.replace(/\//g, ''));
-      data.append('pre_sign_form[field]', this.fieldPath);
-      data.append('pre_sign_form[_token]', this.uploadSignCsrfToken);
-      UIkit.util.ajax(this.uploadSignUrl, {
-        method: 'POST',
-        data: data,
-        headers: {"Authentication-Fallback": true}
-      }).then((result) => {
-        let preSignedUrl = JSON.parse(result.responseText);
-        this.fileName = preSignedUrl.filename;
-        this.fileSize = image.Size;
-        this.fileType = image.FileKey.split('.').pop();
-        this.fileId = preSignedUrl.uuid;
-        this.checksum = preSignedUrl.checksum;
-        UIkit.modal("#files-selection-storage").hide();
-      }, () => {
-        t.error = 'Cannot sign file for uploading';
-      });
+      this.fileName = image.filename;
+      this.fileSize = image.size;
+      this.fileType = image.type;
+      this.fileId = image.uuid;
+      this.checksum = image.checksum;
+      UIkit.modal("#files-selection-storage").hide();
     }
   }
 };
